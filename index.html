@@ -11,13 +11,14 @@
             padding: 0;
             background-color: #1a1a1a;
             color: #ffffff;
+            text-align: center;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        h1, h2 {
+        h1, h2, h3 {
             font-weight: 600;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
@@ -30,6 +31,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 0 10px;
         }
         .btn:hover {
             background-color: #555;
@@ -37,17 +39,15 @@
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
         .image-container {
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
         }
         .image-container img {
-            width: 100%;
+            max-width: 200px;
             height: auto;
-            transition: transform 0.3s ease;
-        }
-        .image-container:hover img {
-            transform: scale(1.05);
+            border-radius: 50%;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -56,6 +56,41 @@
         .fade-in {
             animation: fadeIn 1s ease-in;
         }
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .command-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-direction: column;
+        }
+        .command-info {
+            padding: 0 20px;
+            text-align: center;
+        }
+        .command-section img {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        @media screen and (min-width: 768px) {
+            .command-section {
+                flex-direction: row;
+            }
+            .command-section:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+            .command-info {
+                flex: 1;
+                text-align: left;
+            }
+            .command-section img {
+                flex: 1;
+                max-width: 50%;
+                margin-bottom: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -63,141 +98,62 @@
         <h1 style="font-size: 3em; margin-bottom: 20px;">HackSaw</h1>
         <h2 style="font-size: 1.5em; margin-bottom: 30px;">A Utility Tech Tool-Kit Discord Bot</h2>
         
-        <div style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+        <div style="display: flex; justify-content: center; margin-bottom: 40px;">
             <a href="#" class="btn">Add to Discord</a>
             <a href="https://github.com/jagath-sajjan" class="btn">GitHub</a>
         </div>
 
-        <div class="image-container" style="margin-bottom: 40px;">
-            <img src="path_to_your_image.jpg" alt="HackSaw Bot">
+        <div class="image-container">
+            <img src="https://i.ibb.co/kQd588T/image.png" alt="HackSaw Bot">
         </div>
 
         <section id="commands" style="margin-bottom: 40px;">
             <h2 style="font-size: 2em; margin-bottom: 20px;">Commands</h2>
-            <section class="u-align-left u-clearfix u-grey-80 u-section-2" id="commands">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
+            
+            <div class="command-section">
                 <img src="images/utility.png" alt="Utility Commands" class="responsive-image">
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-middle u-container-layout-2">
-                <div class="fr-view u-clearfix u-rich-text u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">
-                  <p>
-                    <span style="font-size: 1.875rem; font-weight: 700;">📊Utility</span> <!-- MODIFY THESE BASED ON YOUR BOT FEATURES ADD IMAGES ETC-->
-                  </p>
-                  <p id="isPasted">A Cool Set Of Utility Commands To Use In Your Server And Have Fun.</p>
-                  <p><b>12 - Utility Commands!!</b></p>
+                <div class="command-info">
+                    <h3>📊 Utility</h3>
+                    <p>A Cool Set Of Utility Commands To Use In Your Server And Have Fun.</p>
+                    <p><b>12 - Utility Commands!!</b></p>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-border-3 u-border-grey-70 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-    </section>
-    <section class="u-clearfix u-grey-80 u-section-3" id="sec-2031">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-valign-middle u-container-layout-1">
-                <div class="fr-view u-clearfix u-rich-text u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">
-                  <p>
-                    <span style="font-size: 1.875rem; font-weight: 700;">🔎Search</span>
-                  </p>
-                  <p id="isPasted">Surf The Internet While Having Fun On Discord.</p>
-                  <p><b>6 - Search Commands!!</b></p>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-middle u-container-layout-2">
+
+            <div class="command-section">
                 <img src="images/search.png" alt="Search Commands" class="responsive-image">
-              </div>
+                <div class="command-info">
+                    <h3>🔎 Search</h3>
+                    <p>Surf The Internet While Having Fun On Discord.</p>
+                    <p><b>6 - Search Commands!!</b></p>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-border-3 u-border-grey-70 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-    </section>
-    <section class="u-align-left u-clearfix u-grey-80 u-section-4" id="carousel_97f7">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
+
+            <div class="command-section">
                 <img src="images/language.png" alt="Language & Text Commands" class="responsive-image">
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-middle u-container-layout-2">
-                <div class="fr-view u-clearfix u-rich-text u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">
-                  <p>
-                    <span style="font-size: 1.875rem; font-weight: 700;">📝Language & Text</span>
-                  </p>
-                  <p id="isPasted">Search Up A Meaning Of The Word Or Generate ASCII Arts All On Discord.</p>
-                  <p><b>3 - Language & Text Commands!!</b><p>
+                <div class="command-info">
+                    <h3>📝 Language & Text</h3>
+                    <p>Search Up A Meaning Of The Word Or Generate ASCII Arts All On Discord.</p>
+                    <p><b>3 - Language & Text Commands!!</b></p>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-border-3 u-border-grey-70 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-    </section>
-    <section class="u-clearfix u-grey-80 u-section-5" id="carousel_a2ed">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-valign-middle u-container-layout-1">
-                <div class="fr-view u-clearfix u-rich-text u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">
-                  <p>
-                    <span style="font-size: 1.875rem; font-weight: 700;">🔤Morse Code</span>
-                  </p>
-                  <p id="isPasted">Look Cool Talking In A Secret Language AKA Morse Code.</p>
-                  <p><b>5 - Morse Commands!!</b></p>
-                </div>
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-middle u-container-layout-2">
+
+            <div class="command-section">
                 <img src="images/morse.png" alt="Morse Code Commands" class="responsive-image">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="u-border-3 u-border-grey-70 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-    </section>
-    <section class="u-align-left u-clearfix u-grey-80 u-section-6" id="carousel_4d2a">
-      <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <div class="u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
-                <img src="images/fun.png" alt="Fun & Games Commands" class="responsive-image">
-              </div>
-            </div>
-            <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-              <div class="u-container-layout u-valign-middle u-container-layout-2">
-                <div class="fr-view u-clearfix u-rich-text u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="250">
-                  <p>
-                    <span style="font-size: 1.875rem; font-weight: 700;">🎲Fun & Games</span>
-                  </p>
-                  <p id="isPasted">Keep Your Server Fun And Engaging With Fun Commands Like /Roast</p>
-                  <p><b>12 - Fun & Games Commands!!</b></p>
+                <div class="command-info">
+                    <h3>🔤 Morse Code</h3>
+                    <p>Look Cool Talking In A Secret Language AKA Morse Code.</p>
+                    <p><b>5 - Morse Commands!!</b></p>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+            <div class="command-section">
+                <img src="images/fun.png" alt="Fun & Games Commands" class="responsive-image">
+                <div class="command-info">
+                    <h3>🎲 Fun & Games</h3>
+                    <p>Keep Your Server Fun And Engaging With Fun Commands Like /Roast</p>
+                    <p><b>12 - Fun & Games Commands!!</b></p>
+                </div>
+            </div>
         </section>
 
         <footer style="text-align: center; padding: 20px 0; border-top: 1px solid #333;">
