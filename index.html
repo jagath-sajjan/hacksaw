@@ -154,21 +154,6 @@
         <div style="display: flex; justify-content: center; margin-bottom: 40px;">
             <a href="https://discord.com/oauth2/authorize?client_id=1270040432427925677&permissions=1739418805207030&integration_type=0&scope=applications.commands+bot" class="btn" target="_blank">Add to Discord</a>
             <a href="https://github.com/jagath-sajjan" class="btn" target="_blank">GitHub</a>
-             <button id="play-button" class="btn">Play Audio</button>
-             <audio id="background-audio" loop hidden>
-                <source src="https://audio.jukehost.co.uk/a9LenBFvrpUkh9xXvHRQGqNLyKUsIYHy" type="audio/mpeg">
-                Your browser does not support the audio element.
-                </audio>
-
-    <script>
-        document.getElementById('play-button').addEventListener('click', () => {
-            const audio = document.getElementById('background-audio');
-            audio.play().catch(error => {
-                console.log('Error playing audio:', error);
-            });
-            document.getElementById('play-button').classList.add('hidden');
-        });
-    </script>
         </div>
 
         <div class="image-container">
