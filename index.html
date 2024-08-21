@@ -143,6 +143,21 @@
     </style>
 </head>
 <body>
+    <audio id="background-audio" autoplay loop hidden>
+        <source src="https://audio.jukehost.co.uk/a9LenBFvrpUkh9xXvHRQGqNLyKUsIYHy" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Attempt to play audio on page load
+        window.addEventListener('load', () => {
+            const audio = document.getElementById('background-audio');
+            audio.play().catch(error => {
+                // Handle the error if autoplay is blocked
+                console.log('Autoplay was blocked:', error);
+            });
+        });
+    </script>
     <div class="container fade-in">
         <h1 style="font-size: 3em; margin-bottom: 20px;">HackSaw</h1>
         <h2 style="font-size: 1.5em; margin-bottom: 30px;">A Utility Tech Tool-Kit Discord Bot</h2>
