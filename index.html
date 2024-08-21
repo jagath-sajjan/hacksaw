@@ -140,24 +140,13 @@
             margin-right: 10px;
             vertical-align: middle;
         }
+         }
+        #play-button.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <audio id="background-audio" autoplay loop hidden>
-        <source src="https://audio.jukehost.co.uk/a9LenBFvrpUkh9xXvHRQGqNLyKUsIYHy" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
-        // Attempt to play audio on page load
-        window.addEventListener('load', () => {
-            const audio = document.getElementById('background-audio');
-            audio.play().catch(error => {
-                // Handle the error if autoplay is blocked
-                console.log('Autoplay was blocked:', error);
-            });
-        });
-    </script>
     <div class="container fade-in">
         <h1 style="font-size: 3em; margin-bottom: 20px;">HackSaw</h1>
         <h2 style="font-size: 1.5em; margin-bottom: 30px;">A Utility Tech Tool-Kit Discord Bot</h2>
@@ -165,6 +154,21 @@
         <div style="display: flex; justify-content: center; margin-bottom: 40px;">
             <a href="https://discord.com/oauth2/authorize?client_id=1270040432427925677&permissions=1739418805207030&integration_type=0&scope=applications.commands+bot" class="btn" target="_blank">Add to Discord</a>
             <a href="https://github.com/jagath-sajjan" class="btn" target="_blank">GitHub</a>
+             <button id="play-button" class="btn">Play Audio</button>
+             <audio id="background-audio" loop hidden>
+                <source src="https://audio.jukehost.co.uk/a9LenBFvrpUkh9xXvHRQGqNLyKUsIYHy" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+
+    <script>
+        document.getElementById('play-button').addEventListener('click', () => {
+            const audio = document.getElementById('background-audio');
+            audio.play().catch(error => {
+                console.log('Error playing audio:', error);
+            });
+            document.getElementById('play-button').classList.add('hidden');
+        });
+    </script>
         </div>
 
         <div class="image-container">
